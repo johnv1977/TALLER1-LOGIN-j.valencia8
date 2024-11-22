@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+
+{% block title %}Guarderías{% endblock %}
+
+{% block main %}
+<h1>Guarderías</h1>
+<div class="grid">
+  {% for guarderia in guarderias %}
+    <div class="card">
+      <div class="info">
+        <h3>{{ guarderia.nombre }}</h3>
+        <p><strong>Id:</strong> {{ guarderia.id }}</p>
+        <p><strong>Dirección:</strong> {{ guarderia.direccion }}</p>
+        <p><strong>Telefono:</strong> {{ guarderia.telefono }}</p>
+        <hr>
+        <a class="btn" href="{{ url_for('guarderias.show', id=guarderia.id) }}">Detalles</a>
+        <a class="btn" href="{{ url_for('guarderias.asignar_cuidador', id=guarderia.id) }}">Asignar a Mario</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

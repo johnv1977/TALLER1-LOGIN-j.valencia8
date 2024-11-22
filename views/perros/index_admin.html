@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+
+{% block title %}Perros Index{% endblock %}
+
+{% block main %}
+<h1>Perros</h1>
+<div class="grid">
+  {% for perro in perros %}
+    <div class="card">
+        <div class="info">
+            <h3>{{ perro.nombre }}</h3>
+            <p><strong>Raza:</strong> {{ perro.raza }}</p>
+            <p><strong>Peso:</strong> {{ perro.peso }} kg</p>
+            <p><strong>Edad:</strong> {{ perro.edad }} años</p>
+            <hr>
+            <a class="btn" href="{{ url_for('perros.show', id=perro.id) }}">Detalles</a>
+        </div>
+    </div>
+    </a>
+  {% endfor %}
+</div>
+{% endblock %}

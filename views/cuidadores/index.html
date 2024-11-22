@@ -1,0 +1,20 @@
+{% extends "_base.html" %}
+
+{% block title %}Cuidadores{% endblock %}
+
+{% block main %}
+<h1>Cuidadores</h1>
+<div class="grid">
+  {% for cuidador in cuidadores %}
+    <div class="card">
+      <div class="info">
+        <h3>{{ cuidador.nombre }}</h3>
+        <p><strong>Id:</strong> {{ cuidador.id }}</p>
+        <p><strong>Telefono:</strong> {{ cuidador.telefono }}</p>
+        <hr>
+        <div><a class="btn" href="{{ url_for('cuidadores.show', id=cuidador.id) }}">Detalles</a></div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

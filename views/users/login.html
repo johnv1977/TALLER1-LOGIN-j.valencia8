@@ -1,0 +1,16 @@
+{% extends "_empty.html" %}
+
+{% block title %}{{ site_name }} / Login{% endblock %}
+
+{% block main %}
+<div></div>
+<h1>{{ site_name }} / Login</h1>
+<form method="post" action="/users/login">
+    <!-- Captura la página a donde será redirigido después de iniciar sesión -->
+    <input type="hidden" name="_next_page" value="{{ request.args.get('next') }}">
+    <!-- Nombre de usuario y contraseña -->
+    <input name="username" type="text" placeholder="username" required>
+    <input name="password" type="password" placeholder="password" required>
+    <button type="submit">Enviar</button>
+</form>
+{% endblock %}

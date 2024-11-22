@@ -1,0 +1,24 @@
+{% with errors = get_flashed_messages(category_filter=["error"]) %}
+  {% if errors %}
+    <div class="block-message error">
+      <a class="close" href="#">x</a>
+      <ul>
+        {%- for msg in errors %}
+          <li>{{ msg }}</li>
+        {% endfor -%}
+      </ul>
+    </div>
+  {% endif %}
+{% endwith %}
+{% with success = get_flashed_messages(category_filter=["success"]) %}
+  {% if success %}
+    <div class="block-message success">
+      <a class="close" href="#">x</a>
+      <ul>
+        {%- for msg in success %}
+          <li>{{ msg }}</li>
+        {% endfor -%}
+      </ul>
+    </div>
+  {% endif %}
+{% endwith %}

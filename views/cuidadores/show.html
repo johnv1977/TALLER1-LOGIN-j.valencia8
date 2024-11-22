@@ -1,0 +1,33 @@
+{% extends "_base.html" %}
+
+{% block title %}Cuidadores{% endblock %}
+
+{% block main %}
+<div class="section">
+  <h1>Cuidador: {{ cuidador.nombre }}</h1>
+  <div class="flex-grid">
+    <p><strong>Id:</strong> {{ cuidador.id }}</p>
+    <p><strong>Telefono:</strong> {{ cuidador.telefono }}</p>
+    <a class="btn" href="{{ url_for('guarderias.show', id=cuidador.id_guarderia) }}">Guardería</a>
+  </div>
+  <hr>
+</div>
+
+<div class="section">
+  <h2>Perros</h2>
+  <div class="grid">
+    {% for perro in perros %}
+      <div class="card">
+        <div class="info">
+          <h3>{{ perro.nombre }}</h3>
+          <p><strong>Id:</strong> {{ perro.id }}</p>
+          <p><strong>Raza:</strong> {{ perro.raza }}</p>
+          <p><strong>Peso:</strong> {{ perro.peso }}</p>
+          <hr>
+          <a class="btn" href="{{ url_for('perros.show', id=perro.id) }}">Detalles</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

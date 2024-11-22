@@ -1,0 +1,12 @@
+{% extends "_base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block main %}
+<!-- Prueba 1 -->
+<h3>Guardería con accesos restringidos</h3>
+<p>La rutas <a class="btn" href="{{ url_for('perros.index') }}">perros</a>  es restringida a los administradores.</p>
+<p>Los usuarios para este ejemplo son: <strong>admin, catalina, juan.</strong></p>
+<p>La contraseña siempre es <strong>123</strong></p>
+<hr>
+{% endblock %}
